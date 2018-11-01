@@ -87,7 +87,7 @@ class TaskController extends Controller
             $task->save();
         }
 
-        return response()->json(['tasks' => $user->tasks], 200);
+        return response()->json(['tarefas' => $user->tasks], 200);
     }
 
     /**
@@ -107,7 +107,7 @@ class TaskController extends Controller
             $task->save();
         }
 
-        return response()->json(['tasks' => $user->tasks], 200);
+        return response()->json(['tarefas' => $user->tasks], 200);
     }
 
 }
