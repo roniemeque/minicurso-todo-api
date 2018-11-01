@@ -17,3 +17,4 @@ Route::get('{user}/tarefas', 'TaskController@index');
 Route::post('{user}/tarefas', 'TaskController@store');
 Route::post('{user}/tarefas/{task}/completar', 'TaskController@toggleCompletar');
 Route::post('{user}/tarefas/{task}/arquivar', 'TaskController@toggleArquivar');
+Route::post('{user}/tarefas/{task}/prioridade', 'TaskController@togglePrioridade');

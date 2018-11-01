@@ -110,4 +110,24 @@ class TaskController extends Controller
         return response()->json(['tarefas' => $user->tasks], 200);
     }
 
+    /**
+     * Toggle da prioridade
+     *
+     * @param  string  $username
+     * @param  Task  $task
+     * @return \Illuminate\Http\Response
+     */
+    public function togglePrioridade(Request $request, $username, Task $task)
+    {
+        $user = $this->pegaUserOuCria($username);
+
+        //checando o se eh dono da task
+        if($user->id == $task->user_id){
+            $task->prioridade = ($task->prioridade) ? 0 : 1;
+            $task->save();
+        }
+
+        return response()->json(['tarefas' => $user->tasks], 200);
+    }
+
 }

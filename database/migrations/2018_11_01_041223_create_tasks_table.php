@@ -18,6 +18,7 @@ class CreateTasksTable extends Migration
             $table->string('descricao')->nullable();
             $table->boolean('completa')->default(false);
             $table->boolean('arquivada')->default(false);
+            $table->boolean('prioridade')->default(false);
             $table->integer('user_id')->nullable();
             $table->timestamps();
         });
