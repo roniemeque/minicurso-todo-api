@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('{user}/tarefas', 'TaskController@index');
+Route::post('{user}/tarefas', 'TaskController@store');
+Route::post('{user}/tarefas/{task}/completar', 'TaskController@toggleCompletar');
+Route::post('{user}/tarefas/{task}/arquivar', 'TaskController@toggleArquivar');
